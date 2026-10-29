@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://simshire.synapticnoise.com/sitemap.xml

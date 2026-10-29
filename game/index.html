@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sim Shire: a cozy fantasy village builder</title>
+<meta name="description" content="Build a cozy shire where halflings, dwarves, elves, trolls, goblins and even a dragon live together in peace. Arrange homes, farms, orchards and bridges, keep every folk happy, and throw a fireworks party.">
+<link rel="canonical" href="https://simshire.synapticnoise.com/">
+<meta name="theme-color" content="#3F6E3A">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simshire.synapticnoise.com/">
+<meta property="og:site_name" content="Synaptic Noise">
+<meta property="og:title" content="Sim Shire">
+<meta property="og:description" content="A cozy fantasy village builder: help halflings, dwarves, elves, trolls, goblins and a dragon live together in one happy shire.">
+<meta property="og:image" content="https://simshire.synapticnoise.com/social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sim Shire: a painted valley with round-doored burrows, a river and a friendly dragon">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sim Shire">
+<meta name="twitter:description" content="A cozy fantasy village builder where every folk, even a dragon, lives in peace.">
+<meta name="twitter:image" content="https://simshire.synapticnoise.com/social-card.jpg">
+<meta name="twitter:image:alt" content="Sim Shire: a painted valley with round-doored burrows, a river and a friendly dragon">
+<style>
+  @font-face { font-family: 'Fredoka'; font-weight: 500; src: url('fonts/fredoka-latin-500-normal.woff2') format('woff2'); font-display: block; }
+  @font-face { font-family: 'Fredoka'; font-weight: 600; src: url('fonts/fredoka-latin-600-normal.woff2') format('woff2'); font-display: block; }
+  @font-face { font-family: 'IM Fell English SC'; font-weight: 400; src: url('fonts/im-fell-english-sc-latin-400-normal.woff2') format('woff2'); font-display: block; }
+  html, body { margin: 0; height: 100%; background: #e9d8b0; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; overscroll-behavior: none; }
+  body { position: fixed; inset: 0; }
+  canvas { position: absolute; display: block; outline: none; -webkit-tap-highlight-color: transparent; }
+  #safe { position: fixed; inset: 0; pointer-events: none; visibility: hidden;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+  #turn { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 16px;
+    background: #f4e6c4; color: #4a3426; font: 600 22px Fredoka, sans-serif; text-align: center; padding: 24px; z-index: 5; }
+  #turn .phone { width: 44px; height: 76px; border: 5px solid #4a3426; border-radius: 10px; animation: rot 2s ease-in-out infinite; }
+  @keyframes rot { 0%, 30% { transform: rotate(0); } 60%, 100% { transform: rotate(-90deg); } }
+  #loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #4a3426; font: 600 22px Fredoka, sans-serif; }
+</style>
+</head>
+<body>
+<div id="safe"></div>
+<div id="loading">Loading Sim Shire…</div>
+<canvas id="game" tabindex="0" aria-label="Sim Shire game"></canvas>
+<div id="turn"><div class="phone"></div><div>Turn your phone sideways to play Sim Shire</div></div>
+<script type="module" src="src/main.js"></script>
+<script>
+  const local = ['localhost', '127.0.0.1'].includes(location.hostname);
+  if ('serviceWorker' in navigator && (!local || new URLSearchParams(location.search).has('sw'))) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+</body>
+</html>

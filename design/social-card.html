@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: 'Fell'; src: url('../game/fonts/im-fell-english-sc-latin-400-normal.woff2'); }
+@font-face { font-family: 'Fredoka'; font-weight: 600; src: url('../game/fonts/fredoka-latin-600-normal.woff2'); }
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+.bg { position: absolute; inset: 0; background: url('../game/assets/bg/title-bg.jpg') center/cover; }
+.title { position: absolute; top: 58px; width: 100%; text-align: center; font: 150px 'Fell', serif; color: #3b5a2a;
+  text-shadow: 0 0 14px #fff4d8, 0 0 6px #fff4d8, 0 0 3px #fff4d8; }
+.tag { position: absolute; top: 236px; width: 100%; text-align: center; font: 600 40px 'Fredoka', sans-serif; color: #4a3426; text-shadow: 0 0 10px #fff4d8, 0 0 4px #fff4d8; }
+.folk { position: absolute; bottom: 40px; left: 0; right: 0; display: flex; justify-content: center; gap: 22px; }
+.folk img { height: 150px; filter: drop-shadow(0 4px 6px rgba(60,40,20,.35)); }
+.folk img.dragon { height: 200px; }
+</style></head>
+<body><div class="bg"></div>
+<div class="title">Sim Shire</div>
+<div class="tag">a cozy village for every folk</div>
+<div class="folk">
+  <img src="../game/assets/sprites/folk-halfling.png"><img src="../game/assets/sprites/folk-dwarf.png"><img src="../game/assets/sprites/folk-elf.png">
+  <img class="dragon" src="../game/assets/sprites/folk-dragon.png">
+  <img src="../game/assets/sprites/folk-troll.png"><img src="../game/assets/sprites/folk-goblin.png">
+</div></body></html>

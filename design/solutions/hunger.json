@@ -1,0 +1,1 @@
+[{"op":"place","tool":"burrow","tile":[9,4]},{"op":"place","tool":"farm","tile":[6,5]},{"op":"advanceDays","n":2},{"op":"clear","tile":[6,5]},{"op":"advanceDays","n":3},{"op":"place","tool":"farm","tile":[6,5]},{"op":"advanceDays","n":1}]
